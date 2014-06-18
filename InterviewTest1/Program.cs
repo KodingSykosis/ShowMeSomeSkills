@@ -1,19 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace InterviewTest1
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            var repo = new Repo();
 
+            repo.All()
+                .ToList()
+                .ForEach(invoice => invoice.LineItems.ToList()
+                                           .ForEach(Console.WriteLine));
 
-
+            Console.ReadLine();
         }
-
-        static 
     }
 }
