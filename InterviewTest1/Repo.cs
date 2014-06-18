@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using InterviewTest1.Models;
 
@@ -19,6 +20,7 @@ namespace InterviewTest1
                                                                 15));
                 invoices.Add(new Invoice
                              {
+                                 InvoiceNo = string.Format("B2{0}", idx.ToString(CultureInfo.InvariantCulture).PadRight(6, '0')),
                                  BillingCity = _cities[rnd.Next(_cities.Length)],
                                  BillingContact = _contactNames[rnd.Next(_contactNames.Length)],
                                  BillingState = _states[rnd.Next(_states.Length)],
@@ -55,8 +57,8 @@ namespace InterviewTest1
                               Discount = (byte) Math.Floor(rnd.NextDouble()*30),
                               LineText = _products[rnd.Next(_products.Count())],
                               Quantity = rnd.Next(1,99),
-                              UnitPrice = (decimal) Math.Round(rnd.NextDouble()*600,
-                                                               2)
+                              UnitPrice = (decimal) Math.Round(rnd.NextDouble()*600,2),
+                              Taxable = Math.Round(rnd.NextDouble(), MidpointRounding.ToEven) > 0
                           });
             }
 

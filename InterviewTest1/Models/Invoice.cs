@@ -6,6 +6,11 @@ namespace InterviewTest1.Models
     public class Invoice
     {
         /// <summary>
+        /// Customer invoice reference
+        /// </summary>
+        public string InvoiceNo { get; set; }
+
+        /// <summary>
         /// Name of our client's company
         /// </summary>
         public string CompanyName { get; set; }

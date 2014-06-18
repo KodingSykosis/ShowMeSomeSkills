@@ -43,12 +43,13 @@
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("{0}Quantity: {1:00}\tPer Unit: $ {2:#,0.00}\tDiscount: {3:00} %\tSubTotal: $ {4:#,0.00}",
+            return string.Format("{0}Quantity: {1:00}\tPer Unit: $ {2:#,0.00}{5}\tDiscount: {3:00} %\tSubTotal: $ {4:#,0.00}",
                                  LineText.PadRight(20),
                                  Quantity,
                                  UnitPrice,
                                  Discount,
-                                 SubTotal);
+                                 SubTotal,
+                                 Taxable ? "T" : null);
         }
     }
 }

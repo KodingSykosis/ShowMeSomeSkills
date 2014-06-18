@@ -7,10 +7,9 @@ namespace InterviewTest1
     {
         private static void Main(string[] args)
         {
-            var repo = new Repo();
+            var data = new Repo().All();
 
-            repo.All()
-                .SelectMany(invoice => invoice.LineItems)
+            data.SelectMany(invoice => invoice.LineItems)
                 .ToList()
                 .ForEach(Console.WriteLine);
 
