@@ -29,8 +29,8 @@ namespace InterviewTest1
                                                             rnd.Next(1000,
                                                                      9999)),
                                  CompanyName = _companyNames[rnd.Next(_companyNames.Length)],
-                                 LineItems = GetItems(rnd.Next(2,
-                                                               400)),
+                                 LineItems = GetItems(rnd.Next(1,
+                                                               10)),
                                  PostedDate = DateTime.UtcNow,
                                  RequisitionDate = reqDate,
                                  Shipping = (decimal) Math.Round(rnd.NextDouble()*35, 2),
@@ -54,7 +54,7 @@ namespace InterviewTest1
                           {
                               Discount = (byte) Math.Floor(rnd.NextDouble()*30),
                               LineText = _products[rnd.Next(_products.Count())],
-                              Quantity = rnd.Next(100),
+                              Quantity = rnd.Next(1,99),
                               UnitPrice = (decimal) Math.Round(rnd.NextDouble()*600,
                                                                2)
                           });

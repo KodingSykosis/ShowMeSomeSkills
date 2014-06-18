@@ -10,9 +10,9 @@ namespace InterviewTest1
             var repo = new Repo();
 
             repo.All()
+                .SelectMany(invoice => invoice.LineItems)
                 .ToList()
-                .ForEach(invoice => invoice.LineItems.ToList()
-                                           .ForEach(Console.WriteLine));
+                .ForEach(Console.WriteLine);
 
             Console.ReadLine();
         }
