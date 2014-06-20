@@ -9,6 +9,7 @@ namespace InterviewTest1
         {
             var data = new Repo().All();
 
+            //This example does not include all required fields for output.
             data.SelectMany(invoice => invoice.LineItems)
                 .ToList()
                 .ForEach(Console.WriteLine);
