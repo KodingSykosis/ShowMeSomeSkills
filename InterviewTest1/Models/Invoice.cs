@@ -76,7 +76,7 @@ namespace InterviewTest1.Models
         public decimal Shipping { get; set; }
 
         /// <summary>
-        /// Grand total, includes taxes, discounts, and shipping
+        /// Grand total, invoice SubTotal and shipping
         /// </summary>
         public decimal Total { get; set; }
     }
